@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --font-body: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+    --surface-canvas: #f6f4ef;
+    --surface-paper: #ffffff;
+    --surface-linen: #faf8f4;
+    --border-hairline: #e4dfd4;
+    --ink-primary: #14211e;
+    --ink-muted: #52605c;
+    --accent-emerald: #0f4c45;
+    --accent-emerald-hover: #0a3732;
+    --accent-brass: #a16207;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--surface-canvas);
+    background-image: radial-gradient(rgba(15, 76, 69, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+
+  h1,
+  h2,
+  .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.015em;
+  }
+
+  h3,
+  h4 {
+    font-family: var(--font-body);
+    text-wrap: balance;
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.classic-card {
+  background-color: var(--surface-paper);
+  border: 1px solid var(--border-hairline);
+  box-shadow: 0 1px 2px rgba(20, 33, 30, 0.04), 0 6px 18px rgba(20, 33, 30, 0.02);
+}
+
+.classic-surface-muted {
+  background-color: var(--surface-linen);
+  border-color: var(--border-hairline);
+}
+
+.classic-btn-primary {
+  background-color: var(--accent-emerald);
+  color: #ffffff;
+  transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.classic-btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-emerald-hover);
+}
+
+.classic-btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.classic-media-zoom {
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .classic-media-zoom {
+  transform: scale(1.03);
+}
+
+.classic-rule {
+  border-color: var(--border-hairline);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .classic-media-zoom,
+  .classic-btn-primary {
+    transition: none;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d5cfc2;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b7afa0;
+}
+
+/* Leaflet map refinements matching editorial aesthetic */
+.leaflet-container {
+  font-family: var(--font-body);
+  z-index: 1;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 6px;
+  border: 1px solid var(--border-hairline);
+  box-shadow: 0 8px 24px rgba(20, 33, 30, 0.14);
+  color: var(--ink-primary);
+}
+
+.leaflet-popup-tip {
+  box-shadow: none;
+  border: 1px solid var(--border-hairline);
+}
+

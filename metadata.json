@@ -1,0 +1,6 @@
+{
+  "name": "TravelGenie",
+  "description": "Multi-agent AI travel companion for intent discovery, geo-aware itinerary orchestration, dynamic budget optimization, disruption recovery, and booking lifecycle management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
